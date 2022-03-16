@@ -1,0 +1,10 @@
+.card {
+	background-color: #fff;
+	cursor: pointer;
+	width: clamp(182px, 95vw, 314px);
+	text-align: center;
+	border-radius: 5px;
+	box-shadow: 0 4px 5px #00000026;
+	font-weight: 700;
+	font-size: 1rem;
+}

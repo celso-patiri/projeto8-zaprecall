@@ -1,0 +1,29 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	gap: 1vw;
+	font-size: 1rem;
+}
+
+header img {
+	width: 3rem;
+	height: 4rem;
+}
+
+footer {
+	width: 100vw;
+	height: clamp(50px, 10vh, 80px);
+	background-color: white;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 1.5rem;
+	box-shadow: 0 -4px 5px #0000000d;
+}

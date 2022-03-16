@@ -25,3 +25,8 @@ button {
 	border: 1px solid #d70900;
 	box-shadow: 0 4px 4px #00000026;
 }
+
+button:hover {
+	cursor: pointer;
+	transform: scale(1.02);
+}
