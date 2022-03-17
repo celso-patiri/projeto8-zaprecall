@@ -6,8 +6,8 @@ import './home.css';
 export default function Home() {
 	const [recallStarted, setRecall] = useState(false);
 
-	const toggle = () => {
-		setRecall(!recallStarted);
+	const startRecall = () => {
+		setRecall(true);
 	};
 
 	return <>{recallStarted ? <Recall /> : <Greeting />}</>;
@@ -17,7 +17,7 @@ export default function Home() {
 			<div className="container">
 				<img src="imgs/zap.png" alt="zap img" />
 				<h1>ZapRecall</h1>
-				<button onClick={toggle}>Iniciar Recall</button>
+				<button onClick={startRecall}>Iniciar Recall</button>
 			</div>
 		);
 	}

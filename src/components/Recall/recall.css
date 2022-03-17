@@ -25,5 +25,9 @@ footer {
 	text-align: center;
 	padding-top: 20px;
 	font-size: 1.5rem;
-	box-shadow: 0 -4px 5px #0000000d;
+	box-shadow: 0 -4px 5px #0000003f;
+}
+
+main {
+	margin-bottom: clamp(50px, 10vh, 80px);
 }

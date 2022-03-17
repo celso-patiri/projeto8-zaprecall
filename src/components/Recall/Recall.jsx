@@ -44,9 +44,19 @@ export default function Recall() {
 				<img src="imgs/zap.png" alt="zap img" />
 				<h1>ZapRecall</h1>
 			</header>
-			<Card />
-			<Card />
-			<footer>0/4 Concluidos</footer>
+
+			<main>
+				{cards.map((card, index) => (
+					<Card
+						key={card.toString + index}
+						id={index + 1}
+						question={card.question}
+						answer={card.answer}
+					/>
+				))}
+			</main>
+
+			<footer>{`0/${cards.length} Concluídos`}</footer>
 		</div>
 	);
 }
