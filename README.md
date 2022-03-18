@@ -1,4 +1,8 @@
+[![wakatime](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141.svg)](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141)
+[Check it out here](https://celso-zaprecall.surge.sh/)
+
 # Getting Started with Create React App
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
