@@ -18,16 +18,40 @@ header img {
 
 footer {
 	width: 100vw;
-	height: clamp(50px, 10vh, 80px);
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: white;
 	position: fixed;
 	bottom: 0;
-	text-align: center;
-	padding-top: 20px;
-	font-size: 1.5rem;
 	box-shadow: 0 -4px 5px #0000003f;
+	padding: 2vh 0;
+	gap: 2vh;
+}
+
+footer h2 {
+	font-size: 1.5rem;
+	margin: 0;
+}
+
+footer .answer-icons {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.answer-icons img {
+	width: 1.5rem;
+	height: 1.5rem;
 }
 
 main {
-	margin-bottom: clamp(50px, 10vh, 80px);
+	margin-bottom: 30vh;
+}
+
+button.restart {
+	background-color: #fb6b6b;
+	border: none;
+	color: white;
 }

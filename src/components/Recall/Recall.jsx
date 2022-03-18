@@ -1,45 +1,18 @@
+import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import './recall.css';
 
-const cards = [
-	{
-		question: 'O que é JSX?',
-		answer: 'Uma extensão da linguagem JavaScript utilizada pelo React',
-	},
+import { cards } from '../../decks';
 
-	{
-		question: 'O React é ___',
-		answer: 'Uma bibliotaca JavaScript para a construção de interfaces',
-	},
-	{
-		question: 'Componentes devem ser iniciados com ___',
-		answer: 'Letra Maiuscula!',
-	},
-	{
-		question: 'Podemos colocar qualquer ___ JavaScript dentro do JSX',
-		answer: 'Expressão',
-	},
-	{
-		question: 'Como o ReactDOM nos ajuda?',
-		answer: 'Interagindo com o DOM para nele inserir os componentes React',
-	},
-	{
-		question: 'Usamos o npm para ___',
-		answer: 'Gerenciar os pacotes necessários e suas dependencias',
-	},
-	{
-		question: 'Usamo props para ___',
-		answer: 'Passar informações de um componente pai para um filho',
-	},
-	{
-		question: 'Usamos state para ___',
-		answer: 'Dizer ao react sobre quais informações, quando atualizadas, o componente deve ser re-renderizado  ',
-	},
-];
+export default function Recall({ setRecallState }) {
+	const [answers, setAnswers] = useState([]);
 
-export default function Recall() {
+	useEffect(() => {
+		shuffleArray(cards);
+	}, []);
+
 	return (
-		<div className="container">
+		<div className="container-recall">
 			<header>
 				<img src="imgs/zap.png" alt="zap img" />
 				<h1>ZapRecall</h1>
@@ -52,11 +25,48 @@ export default function Recall() {
 						id={index + 1}
 						question={card.question}
 						answer={card.answer}
+						answersState={{ array: answers, set: setAnswers }}
 					/>
 				))}
 			</main>
 
-			<footer>{`0/${cards.length} Concluídos`}</footer>
+			<footer>
+				<h2>{`${answers.length}/${cards.length} Concluídos`}</h2>
+				<div className="answer-icons">{answers.map((answer) => getAnswerIcon(answer))}</div>
+				<RestartButton />
+			</footer>
 		</div>
 	);
+
+	function RestartButton() {
+		return (
+			<>
+				{answers.length === cards.length ? (
+					<button className="restart" onClick={restartRecall}>
+						Reiniciar Recall
+					</button>
+				) : (
+					''
+				)}
+			</>
+		);
+	}
+
+	function restartRecall() {
+		setRecallState(false);
+		setAnswers([]);
+	}
+
+	function getAnswerIcon(answer) {
+		return <img src={`imgs/${answer.status}-icon.png`} alt="icon" />;
+	}
+
+	function shuffleArray(array) {
+		for (let i = array.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			const temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+	}
 }
