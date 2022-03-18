@@ -18,6 +18,10 @@
 .card.rotateRight {
 	transform: rotateY(180deg);
 }
+.animated-height-div,
+.animated-height-div > div {
+	pointer-events: none;
+}
 
 .card .card-back-face {
 	text-align: center;
@@ -59,6 +63,7 @@
 	right: 0;
 	bottom: 0;
 	margin: 5px;
+	pointer-events: auto;
 }
 
 .card .turn-arrow:hover {
@@ -84,14 +89,17 @@
 
 button.wrong {
 	background: #ff3030;
+	pointer-events: auto;
 }
 
 button.maybe {
 	background: #ff922e;
+	pointer-events: auto;
 }
 
 button.right {
 	background: #2fbe34;
+	pointer-events: auto;
 }
 
 @keyframes strike {

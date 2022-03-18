@@ -23,7 +23,7 @@ export default function Card({ id, question, answer, answersState }) {
 		>
 			{height === 0 ? <CardHeader /> : ''}
 
-			<AnimateHeight duration={500} height={height}>
+			<AnimateHeight duration={500} height={height} className="animated-height-div">
 				{rotated ? <CardBackFace /> : <CardFrontFace />}
 			</AnimateHeight>
 		</div>
