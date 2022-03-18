@@ -20,7 +20,8 @@ h1 {
 	margin: 0 0 5vh 0;
 }
 
-input#zap-goal-input {
+input#zap-goal-input,
+select {
 	width: clamp(141px, 15vw, 300px);
 	height: clamp(31px, 6vh, 60px);
 	border-radius: 5px;

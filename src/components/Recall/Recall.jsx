@@ -2,9 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import './recall.css';
 
-import { cards } from '../../decks';
-
-export default function Recall({ setRecallState }) {
+export default function Recall({ setRecallState, cards }) {
 	const [answers, setAnswers] = useState([]);
 
 	useEffect(() => {
