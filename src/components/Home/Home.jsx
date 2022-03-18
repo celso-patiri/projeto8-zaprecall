@@ -56,11 +56,11 @@ export default function Home() {
 				{decks.map((deckIt, index) => {
 					{
 						return deck.title === deckIt.title ? (
-							<option selected id={index} value={JSON.stringify(deckIt)}>
+							<option selected id={index} value={JSON.stringify(deckIt)} key={index}>
 								{deckIt.title}
 							</option>
 						) : (
-							<option id={index} value={JSON.stringify(deckIt)}>
+							<option id={index} value={JSON.stringify(deckIt)} key={index}>
 								{deckIt.title}
 							</option>
 						);

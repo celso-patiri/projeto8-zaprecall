@@ -12,7 +12,7 @@ export default function Card({ id, question, answer, answersState }) {
 	}
 
 	function turnCard(e) {
-		e.stopPropagation(); //prevent parent onclick from 'toggleExpand'
+		e.stopPropagation();
 		setRotated(true);
 	}
 
@@ -56,13 +56,13 @@ export default function Card({ id, question, answer, answersState }) {
 			<div className="card-back-face">
 				<h2>{answer}</h2>
 				<div className="recall-buttons">
-					<button className="red" onClick={() => setAnswer('wrong')}>
+					<button className="wrong" onClick={() => setAnswer('wrong')}>
 						Não lembrei
 					</button>
-					<button className="yellow" onClick={() => setAnswer('maybe')}>
+					<button className="maybe" onClick={() => setAnswer('maybe')}>
 						Quase não lembrei
 					</button>
-					<button className="green" onClick={() => setAnswer('right')}>
+					<button className="right" onClick={() => setAnswer('right')}>
 						Zap!
 					</button>
 				</div>

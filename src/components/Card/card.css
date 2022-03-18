@@ -78,16 +78,19 @@
 	color: #fff;
 	font-size: 1rem;
 }
+.recall-buttons button :hover {
+	transform: scale(1.05);
+}
 
-button.red {
+button.wrong {
 	background: #ff3030;
 }
 
-button.yellow {
+button.maybe {
 	background: #ff922e;
 }
 
-button.green {
+button.right {
 	background: #2fbe34;
 }
 
