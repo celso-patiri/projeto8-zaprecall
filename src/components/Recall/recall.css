@@ -39,6 +39,7 @@ footer .answer-icons {
 	display: flex;
 	align-items: center;
 	gap: 5px;
+	margin-bottom: 1vh 0;
 }
 
 .answer-icons img {
@@ -54,4 +55,19 @@ button.restart {
 	background-color: #fb6b6b;
 	border: none;
 	color: white;
+}
+
+.finished-message {
+	display: flex;
+	align-items: center;
+	gap: 1vw;
+}
+
+.finished-message img {
+	height: 2rem;
+	width: 2rem;
+}
+
+footer p {
+	margin: 0;
 }

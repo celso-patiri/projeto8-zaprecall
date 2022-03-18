@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import './recall.css';
 
-export default function Recall({ setRecallState, cards }) {
+export default function Recall({ setRecallState, cards, goal }) {
 	const [answers, setAnswers] = useState([]);
 
 	useEffect(() => {
@@ -29,12 +29,36 @@ export default function Recall({ setRecallState, cards }) {
 			</main>
 
 			<footer>
-				<h2>{`${answers.length}/${cards.length} Concluídos`}</h2>
+				{answers.length < cards.length ? <ProgressTracker /> : <FinishedMessage />}
 				<div className="answer-icons">{answers.map((answer) => getAnswerIcon(answer))}</div>
 				<RestartButton />
 			</footer>
 		</div>
 	);
+
+	//extracted components ----------------------------------------------------------------
+
+	function ProgressTracker() {
+		return <h2>{`${answers.length}/${cards.length} Concluídos`}</h2>;
+	}
+
+	function FinishedMessage() {
+		const correct = correctAnsersCount();
+		const won = correct >= goal;
+		return (
+			<>
+				<div className="finished-message">
+					<img src={`imgs/${won ? 'party' : 'sad'}.png`} alt="img" />
+					<h3>{won ? 'PARABÉNS!' : 'PUTZ!'}</h3>
+				</div>
+				<p>
+					{won
+						? `Você acertou ${correct} zaps!`
+						: 'Ainda faltaram alguns... Mas não desanime!'}
+				</p>
+			</>
+		);
+	}
 
 	function RestartButton() {
 		return (
@@ -48,6 +72,12 @@ export default function Recall({ setRecallState, cards }) {
 				)}
 			</>
 		);
+	}
+
+	//auxiliar methods ----------------------------------------------------------------
+
+	function correctAnsersCount() {
+		return answers.filter((answer) => answer.status === 'right').length;
 	}
 
 	function restartRecall() {

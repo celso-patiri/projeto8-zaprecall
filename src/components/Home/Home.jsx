@@ -7,13 +7,13 @@ import { decks } from '../../decks';
 
 export default function Home() {
 	const [recallStarted, setRecallStarted] = useState(false);
-	const [deck, setDeck] = useState(null);
+	const [deck, setDeck] = useState(decks[0]);
 	const [zapGoal, setZapGoal] = useState(0);
 
-	const cards = deck ? deck.cards : null;
+	const cards = deck.cards;
 
 	const startRecall = () => {
-		if (deck && zapGoal > 0 && zapGoal <= cards.length) {
+		if (zapGoal > 0 && zapGoal <= cards.length) {
 			setRecallStarted(true);
 		}
 	};
@@ -21,7 +21,7 @@ export default function Home() {
 	return (
 		<>
 			{recallStarted ? (
-				<Recall setRecallState={setRecallStarted} cards={cards} />
+				<Recall setRecallState={setRecallStarted} cards={cards} goal={zapGoal} />
 			) : (
 				<Greeting />
 			)}
@@ -55,7 +55,7 @@ export default function Home() {
 			<>
 				{decks.map((deckIt, index) => {
 					{
-						return deck && deck.title === deckIt.title ? (
+						return deck.title === deckIt.title ? (
 							<option selected id={index} value={JSON.stringify(deckIt)}>
 								{deckIt.title}
 							</option>
