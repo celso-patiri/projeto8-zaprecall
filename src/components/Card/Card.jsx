@@ -2,7 +2,9 @@ import { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import './card.css';
 
-export default function Card({ id, question, answer, answersState }) {
+import turnArrow from '../../assets/imgs/setinha.png';
+
+export default function Card({ id, question, answer, answersState, icons }) {
 	const [height, setHeight] = useState(0);
 	const [rotated, setRotated] = useState(false);
 	const [answeredStatus, setAnsweredStatus] = useState('unanswered');
@@ -37,7 +39,7 @@ export default function Card({ id, question, answer, answersState }) {
 						className={answeredStatus !== 'unanswered' ? 'strike-animation' : ''}
 					>{`Pergunta ${id}`}</span>
 				</h3>
-				<img src={`imgs/${answeredStatus}-icon.png`} alt="" />
+				<img src={icons[answeredStatus]} alt="" />
 			</header>
 		);
 	}
@@ -46,7 +48,7 @@ export default function Card({ id, question, answer, answersState }) {
 		return (
 			<div>
 				<h2>{question}</h2>
-				<img className="turn-arrow" onClick={turnCard} src="imgs/setinha.png" alt="set" />
+				<img className="turn-arrow" onClick={turnCard} src={turnArrow} alt="set" />
 			</div>
 		);
 	}
