@@ -2,7 +2,22 @@ import { useEffect, useState } from 'react';
 import Card from '../Card/Card';
 import './recall.css';
 
-export default function Recall({ setRecallState, cards, goal }) {
+import unansweredIcon from '../../assets/imgs/unanswered-icon.png';
+import rightIcon from '../../assets/imgs/right-icon.png';
+import maybeIcon from '../../assets/imgs/maybe-icon.png';
+import wrongIcon from '../../assets/imgs/wrong-icon.png';
+
+import partyIcon from '../../assets/imgs/party.png';
+import sadIcon from '../../assets/imgs/sad.png';
+
+const icons = {
+	unanswered: unansweredIcon,
+	right: rightIcon,
+	maybe: maybeIcon,
+	wrong: wrongIcon,
+};
+
+export default function Recall({ setRecallState, cards, goal, zapImg }) {
 	const [answers, setAnswers] = useState([]);
 
 	useEffect(() => {
@@ -12,7 +27,7 @@ export default function Recall({ setRecallState, cards, goal }) {
 	return (
 		<div className="container-recall">
 			<header>
-				<img src="imgs/zap.png" alt="zap img" />
+				<img src={zapImg} alt="zap img" />
 				<h1>ZapRecall</h1>
 			</header>
 
@@ -24,6 +39,7 @@ export default function Recall({ setRecallState, cards, goal }) {
 						question={card.question}
 						answer={card.answer}
 						answersState={{ array: answers, set: setAnswers }}
+						icons={icons}
 					/>
 				))}
 			</main>
@@ -48,7 +64,7 @@ export default function Recall({ setRecallState, cards, goal }) {
 		return (
 			<>
 				<div className="finished-message">
-					<img src={`imgs/${won ? 'party' : 'sad'}.png`} alt="img" />
+					<img src={won ? partyIcon : sadIcon} alt="img" />
 					<h3>{won ? 'PARABÉNS!' : 'PUTZ!'}</h3>
 				</div>
 				<p>
@@ -86,7 +102,7 @@ export default function Recall({ setRecallState, cards, goal }) {
 	}
 
 	function getAnswerIcon(answer) {
-		return <img src={`imgs/${answer.status}-icon.png`} alt="icon" />;
+		return <img src={icons[answer.status]} alt="icon" />;
 	}
 
 	function shuffleArray(array) {

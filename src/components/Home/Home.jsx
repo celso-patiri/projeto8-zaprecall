@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Recall from '../Recall/Recall';
 
 import './home.css';
+import zapImg from '../../assets/imgs/zap.png';
 
 import { decks } from '../../decks';
 
@@ -21,7 +22,12 @@ export default function Home() {
 	return (
 		<>
 			{recallStarted ? (
-				<Recall setRecallState={setRecallStarted} cards={cards} goal={zapGoal} />
+				<Recall
+					setRecallState={setRecallStarted}
+					cards={cards}
+					goal={zapGoal}
+					zapImg={zapImg}
+				/>
 			) : (
 				<Greeting />
 			)}
@@ -31,7 +37,7 @@ export default function Home() {
 	function Greeting() {
 		return (
 			<div className="container">
-				<img src="imgs/zap.png" alt="zap img" />
+				<img src={zapImg} alt="zap img" />
 				<h1>ZapRecall</h1>
 
 				<select name="deck-select" id="deck-select" onChange={handleDeckSelect}>
@@ -76,6 +82,5 @@ export default function Home() {
 
 	function handleDeckSelect(event) {
 		setDeck(JSON.parse(event.target.value));
-		console.log(event.target.value);
 	}
 }
