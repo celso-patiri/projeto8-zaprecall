@@ -1,5 +1,27 @@
 [![wakatime](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141.svg)](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141)
-[Check it out here](https://celso-zaprecall.surge.sh/)
+
+<div align="center">
+  <a href="https://celso-zaprecall.surge.sh">
+    <img src="https://www.driven.com.br/wp-content/uploads/2021/11/logo-footer.svg" alt="Logo" width="100">
+  </a>
+
+<h2 align="center">Cineflex</h2>
+  <a href="https://celso-zaprecall.surge.sh/">
+    <h3 align="center">
+     Web Development Project
+      </h3>
+  </a>
+  
+</div>
+
+
+<div align="center">
+  
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  
+ </div>
 
 # Getting Started with Create React App
 
