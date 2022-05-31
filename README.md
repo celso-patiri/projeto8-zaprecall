@@ -1,11 +1,13 @@
-[![wakatime](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141.svg)](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141)
-
 <div align="center">
+  
+  [![wakatime](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141.svg)](https://wakatime.com/badge/user/8a52c0fd-ec78-403a-81d0-07c674c564b3/project/0f1b6b49-ed9b-4406-a5e7-ca56dd8c1141)
+  
+  
   <a href="https://celso-zaprecall.surge.sh">
-    <img src="https://www.driven.com.br/wp-content/uploads/2021/11/logo-footer.svg" alt="Logo" width="100">
+    <img src="https://github.com/celso-patiri/projeto8-zaprecall/blob/master/src/assets/imgs/zap.png" alt="Logo" width="100">
   </a>
 
-<h2 align="center">Cineflex</h2>
+<h2 align="center">ZapRecall</h2>
   <a href="https://celso-zaprecall.surge.sh/">
     <h3 align="center">
      Web Development Project
